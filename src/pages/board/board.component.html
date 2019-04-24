@@ -1,0 +1,27 @@
+<div class="clearfix">
+  <my-cell
+    *ngFor="let cell of (cells | slice: 0:3); let i = index"
+    [value]="cell"
+    (userClick)="clickHandler(i)"
+  ></my-cell
+  ><br />
+</div>
+
+<div class="clearfix">
+  <my-cell
+    *ngFor="let cell of (cells | slice: 3:6); let i = index"
+    [value]="cell"
+    (userClick)="clickHandler(i + 3)"
+  ></my-cell
+  ><br />
+</div>
+<div class="clearfix">
+  <my-cell
+    *ngFor="let cell of (cells | slice: 6); let i = index"
+    [value]="cell"
+    (userClick)="clickHandler(i + 6)"
+  ></my-cell
+  ><br />
+</div>
+<div *ngIf="winner">winner is {{ winner }}</div>
+<button (click)="init()">Reset</button>
